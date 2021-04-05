@@ -147,7 +147,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200336907}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 85322a586c08bd540b061bbfe212e884, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -172,7 +172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1bb0fed92c665974eacccf8f990a3cda, type: 2}
+  - {fileID: 2100000, guid: 3fb9693e83496d548a9e069b35842b01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 200336907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 40}
-  m_LocalScale: {x: 3, y: 1, z: 10}
+  m_LocalScale: {x: 40, y: 1, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -383,6 +383,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8585936780953391528, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_WheelDampingRate
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936780953391528, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: breakSpeed
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: acceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: maxMotorTorque
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: maxSteeringAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: currentBrakeTorque
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: axleInfos.Array.data[0].motor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: axleInfos.Array.data[1].motor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: axleInfos.Array.data[0].steering
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: axleInfos.Array.data[1].steering
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609707, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: axleInfos.Array.data[0].hasBrakes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8585936781024609708, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
         type: 3}
       propertyPath: m_RootOrder
@@ -396,12 +456,12 @@ PrefabInstance:
     - target: {fileID: 8585936781024609708, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 8585936781024609708, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.98
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 8585936781024609708, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
         type: 3}
@@ -438,10 +498,80 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609709, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609709, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936781024609709, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8585936781024609710, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
         type: 3}
       propertyPath: m_Name
       value: car_root
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782171712428, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782171712428, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782171712428, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659258
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782171712428, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.2588191
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782171712428, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782218819085, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_WheelDampingRate
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782218819085, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782301083639, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_WheelDampingRate
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782301083639, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782323609701, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_WheelDampingRate
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585936782323609701, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01,
+        type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: -0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d279ce8c9c0b0ec4cb2f38c7568bfe01, type: 3}
