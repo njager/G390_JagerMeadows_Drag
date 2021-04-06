@@ -1,11 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem; 
 
 public class controllerboat : MonoBehaviour
 {
   public PropellerBoats ship;
   bool forward = true;
+    BoatTest controls;
+
+
+    void Awake()
+    {
+        controls = new BoatTest();
+        controls.Gameplay.Forward.performed += ctx => ship.ThrottleUp();
+        controls.Gameplay.Backward.performed += ctx => ship.ThrottleDown();
+        controls.Gameplay.Left.performed += ctx => ship.RudderLeft();
+        controls.Gameplay.Right.performed += ctx => ship.RudderRight();
+    }
+
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
 
   void Update()
   {
