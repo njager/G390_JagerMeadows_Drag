@@ -10,28 +10,43 @@ public class CarController : MonoBehaviour
     public float acceleration;
     public float currentBrakeTorque;
 
+    private Rigidbody rb;      //Reference to Rigidbody Component
+    public float speed;        //Speed, updated through script
+    
+
+
     private void Start()
     {
-       // acceleration = acceleration * Time.deltaTime;   
+        // acceleration = acceleration * Time.deltaTime;   
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = -transform.forward * speed;
     }
 
     public void FixedUpdate()
     {
-        float motor = maxMotorTorque * Input.GetAxis("Gas") * acceleration;
+
+        
+        //Set object velocity
+        rb.velocity = -transform.forward * speed; 
+        float motor = maxMotorTorque * Input.GetAxis("Gas") * acceleration * speed;
         if (Input.GetAxis("Gas") > 0)
         {
-            motor = maxMotorTorque * Input.GetAxis("Gas") * acceleration;
+            speed += Time.deltaTime * acceleration;
+            motor = maxMotorTorque * Input.GetAxis("Gas") * acceleration * speed;
         }
         if (Input.GetAxis("ReverseGas") > 0)
         {
-            motor = maxMotorTorque * Input.GetAxis("ReverseGas") * -1f;
+            
+            motor = maxMotorTorque * Input.GetAxis("ReverseGas") * -1f * speed;
         }
         if (Input.GetKey(KeyCode.JoystickButton1))
         {
+            speed += Time.deltaTime * acceleration;
             currentBrakeTorque = 100000f;
         }
         else
         {
+            speed = 5;
             currentBrakeTorque = 0f;
         }
         //float motor = maxMotorTorque * Input.GetAxis("Gas") * acceleration;
