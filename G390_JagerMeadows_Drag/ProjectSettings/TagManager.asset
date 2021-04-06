@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CheckPoint
+  - Enemy
+  - fellover
+  - oob
+  - opponent
   layers:
   - Default
   - TransparentFX
