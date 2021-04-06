@@ -1,20 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class BoatController : MonoBehaviour
 {
   public PropellerBoats ship;
   bool forward = true;
+    private Rigidbody thisRigidbody; 
 
-  void Update()
+    void Start()
+    {
+        thisRigidbody = GetComponent<Rigidbody>(); 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.tag == "oob")
+        {
+            thisRigidbody.transform.Rotate(0.0f, 100.0f, 0.0f, Space.World);
+            thisRigidbody.transform.position = CheckPoint.GetActiveCheckPointPosition();
+
+        }
+    } 
+
+    void Update()
   {
 
-    /*if (Input.GetKey(KeyCode.Q))
-      ship.RudderLeft();
-    if (Input.GetKey(KeyCode.D))
-      ship.RudderRight();*/
+        //IF YOU GET STUCK,, REASSIGN THIS TO A CONTROLLER BUTTTON 
+        if (Input.GetKeyDown("space"))
+        {
+            thisRigidbody.transform.Rotate(0.0f, 100.0f, 0.0f, Space.World);
+            thisRigidbody.transform.position = CheckPoint.GetActiveCheckPointPosition();
+        }
 
-    if (Input.GetAxis("Horizontal") < 0)
+        //IF YOU GET RESTARTS THE SCENE,, REASSIGN THIS TO A CONTROLLER BUTTTON 
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        } 
+
+        /*if (Input.GetKey(KeyCode.Q))
+          ship.RudderLeft();
+        if (Input.GetKey(KeyCode.D))
+          ship.RudderRight();*/
+
+        if (Input.GetAxis("Horizontal") < 0)
       ship.RudderLeft();
     if (Input.GetAxis("Horizontal") > 0)
       ship.RudderRight();
