@@ -6,11 +6,14 @@ public class BoatController : MonoBehaviour
 {
   public PropellerBoats ship;
   bool forward = true;
-    private Rigidbody thisRigidbody; 
+    private Rigidbody thisRigidbody;
+    public AudioClip impact;
+    AudioSource audioSource; 
 
     void Start()
     {
-        thisRigidbody = GetComponent<Rigidbody>(); 
+        thisRigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -20,6 +23,7 @@ public class BoatController : MonoBehaviour
         {
             thisRigidbody.transform.Rotate(0.0f, 100.0f, 0.0f, Space.World);
             thisRigidbody.transform.position = CheckPoint.GetActiveCheckPointPosition();
+            audioSource.PlayOneShot(impact, 0.7F); 
 
         }
     } 
