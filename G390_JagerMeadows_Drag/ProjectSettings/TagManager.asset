@@ -9,6 +9,7 @@ TagManager:
   - fellover
   - oob
   - opponent
+  - agent
   layers:
   - Default
   - TransparentFX

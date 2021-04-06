@@ -31,7 +31,7 @@ public class finishline : MonoBehaviour
             lapComplete = true;
         }
 
-        elseif (startTime == 100f)
+        if (startTime == 100f)
         {
             npcwin.SetActive(true);
             lapComplete = true;
